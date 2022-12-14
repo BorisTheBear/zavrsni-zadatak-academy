@@ -15,11 +15,16 @@
 
     <!-- Custom styles for this template -->
     <link href="styles/blog.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 </head>
 
 <body>
 
+<main role="main" class="container">
+
 <?php include("posts.php"); ?>
+
+</main><!-- /.container -->
 
 </body>
 </html>
