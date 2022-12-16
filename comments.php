@@ -9,9 +9,12 @@
 <body>
 
 <?php
-    include("header.php");
-    include("footer.php");
-    include("sidebar.php");
+    $sql2 = "SELECT id, author, text, post_id FROM comments WHERE post_id = {$_GET['id']} ORDER BY id ASC";
+    $statement2 = $connection->prepare($sql2);
+    $statement2->execute();
+
+    $statement2->setFetchMode(PDO::FETCH_ASSOC);
+    $comments = $statement2->fetchAll();
 ?>
     
 </body>

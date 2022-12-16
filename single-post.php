@@ -33,13 +33,7 @@ if(isset($_GET['id'])) {
     $statement->setFetchMode(PDO::FETCH_ASSOC);
     $singlePost = $statement->fetch();
     // dump($posts);
-
-    $sql2 = "SELECT id, author, text, post_id FROM comments WHERE post_id = {$_GET['id']} ORDER BY id ASC";
-    $statement2 = $connection->prepare($sql2);
-    $statement2->execute();
-
-    $statement2->setFetchMode(PDO::FETCH_ASSOC);
-    $comments = $statement2->fetchAll();
+    include("comments.php");
 }
 ?>
 <div class="row">
