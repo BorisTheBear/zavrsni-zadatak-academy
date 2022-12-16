@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vivify Blog</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 <?php include("database.php"); ?>
 
 <?php
-    $sql = "SELECT title, body, author, created_at FROM posts ORDER BY created_at DESC";
+    $sql = "SELECT id, title, body, author, created_at FROM posts ORDER BY created_at DESC";
     $statement = $connection->prepare($sql);
     $statement->execute();
 
@@ -35,7 +35,7 @@
     <?php foreach($posts as $post) { ?>
 
         <div class="blog-post">
-            <h2 class="blog-post-title"><a href="single-post.php"><?php echo ($post['title']); ?></a></h2>
+            <h2 class="blog-post-title"><a href="single-post.php?id=<?php echo ($post['id']); ?>"><?php echo ($post['title']); ?></a></h2>
             <p class="blog-post-meta"><?php echo ($post['created_at']); ?> by <a href="#"><?php echo ($post['author']); ?></a></p>
 
             <p><?php echo ($post['body']); ?></p>
