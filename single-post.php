@@ -45,8 +45,14 @@ if(isset($_GET['id'])) {
             <p><?php echo ($singlePost['body']); ?></p>
             
         </div><!-- /.blog-post -->
+
+        <div name="button-hide-comments">
+            <script src="hide-comments-button.js"></script>
+            <button type="button" name="hide-comments-button" class="btn btn-default" onclick="hideComments()">Hide Comments</button>
+        </div><!-- /.comments-button -->
+
         <div>
-            <ul>
+            <ul name="comments">
                 <hr>
                     <?php foreach($comments as $comment) { ?>
                         <li>
