@@ -28,9 +28,9 @@ CREATE TABLE `comments` (
   `text` varchar(1000) NOT NULL,
   `post_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `post_id` (`post_id`),
+  KEY `post_id` (`post_id`),
   CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `comments` (
 
 LOCK TABLES `comments` WRITE;
 /*!40000 ALTER TABLE `comments` DISABLE KEYS */;
+INSERT INTO `comments` VALUES (1,'Fahreta','Ma nije sigurno, ja mislim da je on samo obazriv prema svojim ucenicima!',1),(2,'BorisTheBear','Jesu, i meni su cokoladne jako dobre.',2),(3,'BorisTheBear','Pa on i jeste zavrsio za kulinara, mozda je i on pravio zapravo.',3),(4,'Fahreta','Nije ih on napravio, videla sam ga kad je izasao sa kutijom iz pekare.',3);
 /*!40000 ALTER TABLE `comments` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -78,4 +79,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-14 21:54:39
+-- Dump completed on 2022-12-16 21:49:46
